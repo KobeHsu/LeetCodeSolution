@@ -10,15 +10,14 @@ public class Problem231 {
 
   public boolean isPowerOfTwo(int n) {
 
-    long i = 0;
     long base = 1;
-    long powerOfTwo = (base << i);
+    long powerOfTwo = 1;
 
     while (n >= powerOfTwo) {
       if (n == powerOfTwo) {
         return true;
       }
-      powerOfTwo = (base << ++i);
+      powerOfTwo <<= base;
     }
 
     return false;
