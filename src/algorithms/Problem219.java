@@ -14,20 +14,27 @@ public class Problem219 {
       return false;
     }
 
-    int lastNum = nums[0];
-    int count = 0;
 
-    for (int i = 1; i < nums.length; i++) {
+    for (int i = 0; i < nums.length; i++) {
 
-      if (lastNum == nums[i]) {
-        count++;
-      } else {
-        count = 0;
+      int n = nums[i];
+      int stop = (i + k - 1);
+
+      for (int j = nums.length - 1; j >= stop; j--) {
+
+        if (n == nums[j]) {
+          if ((j - i + 1) <= k) {
+            return true;
+          } else {
+            break;
+          }
+        }
+
       }
 
     }
 
-    return count > 0;
+    return false;
 
   }
 
@@ -38,7 +45,7 @@ public class Problem219 {
     Problem219 p = new Problem219();
     System.out.println(p.containsNearbyDuplicate(nums, k));
 
-    nums = new int[] {1, 2, 3, 45, 71, 3, 3, 3, 32, 2};
+    nums = new int[] {1, 2, 3, 45, 71, 3, 3, 3, 32, 3, 2};
     System.out.println(p.containsNearbyDuplicate(nums, k));
 
   }
