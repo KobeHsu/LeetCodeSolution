@@ -46,8 +46,16 @@ public class Problem232 {
 
   public static void main(String args[]) {
 
-
     Problem232 p = new Problem232();
+    p.push(1);
+    p.push(2);
+    p.push(3);
+
+    System.out.println(p.peek());
+    p.pop();
+    System.out.println(p.peek());
+
+    System.out.println(p.empty());
 
   }
 
