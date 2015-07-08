@@ -1,8 +1,6 @@
 package algorithms;
 
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 /**
@@ -19,34 +17,17 @@ public class Problem219 {
       return false;
     }
 
-    Set<Integer> visited = new HashSet<Integer>();
-
     for (int i = 0; i < nums.length - 1; i++) {
 
-      int length = 0;
       int n = nums[i];
 
-      if (visited.add(n)) {
+      for (int j = i + 1; (j < i + 1 + k) && j < nums.length; j++) {
 
-
-        for (int j = i + 1; j < nums.length; j++) {
-
-          if (nums[j] == n) {
-            length = j - i;
-          }
-
-          if (length > k) {
-            break;
-          }
-
+        if (nums[j] == n) {
+          return true;
         }
 
       }
-
-      if (length > 0) {
-        return true;
-      }
-
 
     }
 
@@ -60,15 +41,12 @@ public class Problem219 {
 
     for (int i = 0; i < nums.length; i++) {
 
-//      System.out.format("i=%d, k=%d\n", i, k);
       if (!set.add(nums[i])) {
-//        System.out.format("SET add: %d\n" , nums[i]);
         return true;
       }
 
       if (i >= k) {
         set.remove(nums[i - k]);
-//        System.out.format("SET remove: %d\n" , nums[i - k]);
       }
 
     }
@@ -87,16 +65,17 @@ public class Problem219 {
     System.out.println(p.containsNearbyDuplicate_(nums, k));
 
     nums = new int[30000];
-    for (int i=0 ; i <30000; i++) {
-      nums[i]=i;
+    for (int i = 0; i < 30000; i++) {
+      nums[i] = i;
     }
+
     long start = System.currentTimeMillis();
-    System.out.println(p.containsNearbyDuplicate_(nums, k));
+    System.out.println(p.containsNearbyDuplicate_(nums, 29999));
     long end = System.currentTimeMillis();
     System.out.println(end - start);
 
     start = System.currentTimeMillis();
-    System.out.println(p.containsNearbyDuplicate(nums, k));
+    System.out.println(p.containsNearbyDuplicate(nums, 29999));
     end = System.currentTimeMillis();
     System.out.println(end - start);
 
