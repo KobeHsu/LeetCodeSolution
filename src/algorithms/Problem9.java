@@ -47,7 +47,20 @@ public class Problem9 {
       x2 += (n % 10) * Math.pow(10, half);
     }
 
-    return (x2 - x == 0);
+    return (x2 == x);
+  }
+
+  public boolean isPalindrome2(int x) {
+
+    int n1 = 0;
+    int n2 = x;
+
+    while (n2 > 0) {
+      n1 = n1 * 10 + n2 % 10;
+      n2 /= 10;
+    }
+
+    return n1 == x;
   }
 
   public static void main(String args[]) {
@@ -56,7 +69,7 @@ public class Problem9 {
 
     long start = System.currentTimeMillis();
     System.out.println(p.isPalindrome(0));
-    System.out.println(p.isPalindrome(123454321));
+    System.out.println(p.isPalindrome2(123454321));
     long end = System.currentTimeMillis();
     System.out.println(end - start + "ms");
 
