@@ -1,41 +1,72 @@
 package algorithms;
 
+import java.util.Arrays;
+
 /**
- * Remove Duplicates from Sorted Array
+ * Remove Element
  *
  * @author kobe
  *
  */
 public class Problem27 {
 
-  public int removeDuplicates(int[] nums) {
+  public int removeElement_(int[] nums, int val) {
 
     int len = nums.length;
-    if (len < 2) {
-      return len;
+    if (len == 0) {
+      return 0;
     }
 
-    int c = 1;
-    int n = nums[0];
-    for (int i = 1; i < len; i++) {
-      if (nums[i] != n) {
-        c++;
-        n = nums[i];
-        nums[c - 1] = nums[i];
+    Arrays.sort(nums);
+
+    boolean found = false;
+    int del = 0;
+
+    for (int i = 0; i < len; i++) {
+
+      if (nums[i] == val) {
+        found = true;
+        del++;
+      } else if (found) {
+        nums[i - del] = nums[i];
       }
+
     }
 
-    return c;
+    return len - del;
   }
+
+  public int removeElement(int[] nums, int val) {
+
+    int len = nums.length;
+    if (len == 0) {
+      return 0;
+    }
+
+    int del = 0;
+
+    for (int i = 0; i < len; i++) {
+
+      if (nums[i] == val) {
+        del++;
+      } else {
+        nums[i-del]= nums[i];
+      }
+
+    }
+
+    return len - del;
+  }
+
 
   public static void main(String args[]) {
 
     Problem27 p = new Problem27();
 
-    int[] nums = new int[] {1, 1, 2, 3, 4, 5, 5, 6, 6, 6, 7};
+    int[] nums = new int[] {1, 6, 1, 2, 6, 3, 6, 4, 5, 5, 6, 6, 6, 7};
 
     long start = System.currentTimeMillis();
-    System.out.println(p.removeDuplicates(nums));
+    System.out.println(p.removeElement(nums, 6));
     for (int n : nums) {
       System.out.print(n + ",");
     }
