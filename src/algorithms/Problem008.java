@@ -6,7 +6,7 @@ package algorithms;
  * @author kobe
  *
  */
-public class Problem8 {
+public class Problem008 {
 
   public int myAtoi(String str) {
 
@@ -79,7 +79,7 @@ public class Problem8 {
 
   public static void main(String args[]) {
 
-    Problem8 p = new Problem8();
+    Problem008 p = new Problem008();
 
     long start = System.currentTimeMillis();
     System.out.println(p.myAtoi("    10522545459"));

@@ -6,7 +6,7 @@ package algorithms;
  * @author kobe
  *
  */
-public class Problem26 {
+public class Problem026 {
 
   public int removeDuplicates(int[] nums) {
 
@@ -30,7 +30,7 @@ public class Problem26 {
 
   public static void main(String args[]) {
 
-    Problem26 p = new Problem26();
+    Problem026 p = new Problem026();
 
     int[] nums = new int[] {1, 1, 2, 3, 4, 5, 5, 6, 6, 6, 7};
 

@@ -6,7 +6,7 @@ package algorithms;
  * @author kobe
  *
  */
-public class Problem9 {
+public class Problem009 {
 
   public boolean isPalindrome(int x) {
 
@@ -65,7 +65,7 @@ public class Problem9 {
 
   public static void main(String args[]) {
 
-    Problem9 p = new Problem9();
+    Problem009 p = new Problem009();
 
     long start = System.currentTimeMillis();
     System.out.println(p.isPalindrome(0));

@@ -6,7 +6,7 @@ package algorithms;
  * @author kobe
  *
  */
-public class Problem7 {
+public class Problem007 {
 
   public int reverse(int x) {
 
@@ -35,7 +35,7 @@ public class Problem7 {
 
   public static void main(String[] args) {
 
-    Problem7 p = new Problem7();
+    Problem007 p = new Problem007();
     System.out.println(p.reverse(12345678));
 
   }

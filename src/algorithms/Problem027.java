@@ -8,7 +8,7 @@ import java.util.Arrays;
  * @author kobe
  *
  */
-public class Problem27 {
+public class Problem027 {
 
   public int removeElement_(int[] nums, int val) {
 
@@ -61,7 +61,7 @@ public class Problem27 {
 
   public static void main(String args[]) {
 
-    Problem27 p = new Problem27();
+    Problem027 p = new Problem027();
 
     int[] nums = new int[] {1, 6, 1, 2, 6, 3, 6, 4, 5, 5, 6, 6, 6, 7};
 

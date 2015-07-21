@@ -6,7 +6,7 @@ package algorithms;
  * @author kobe
  *
  */
-public class Problem58 {
+public class Problem058 {
 
   public int lengthOfLastWord(String s) {
 
@@ -36,7 +36,7 @@ public class Problem58 {
 
   public static void main(String args[]) {
 
-    Problem58 p = new Problem58();
+    Problem058 p = new Problem058();
 
     String s = "Hello World";
 
