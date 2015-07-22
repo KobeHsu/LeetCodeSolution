@@ -9,7 +9,7 @@ import java.util.Map;
  * @author kobe
  *
  */
-public class Problem13 {
+public class Problem013 {
 
   public int romanToInt(String s) {
 
@@ -104,7 +104,7 @@ public class Problem13 {
      *
      */
 
-    Problem13 p = new Problem13();
+    Problem013 p = new Problem013();
 
     long start = System.currentTimeMillis();
     System.out.println(p.romanToInt("MCMLIV")); // 1954
