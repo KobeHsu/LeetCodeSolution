@@ -1,7 +1,6 @@
 /**
- * 
- */
-/**
+ * Problems of Algorithms
+ *
  * @author kobe
  *
  */
