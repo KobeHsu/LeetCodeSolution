@@ -1,6 +1,7 @@
 package algorithms;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -16,28 +17,29 @@ public class Problem118 {
     List<List<Integer>> result = new ArrayList<List<Integer>>();
 
     if (numRows <= 0) {
-      return null;
+      return result;
     }
 
-    List<Integer> lastRow = new ArrayList<Integer>();
+    Integer[] lastRow = null;
 
     for (int i = 1; i <= numRows; i++) {
 
       int middle = (i % 2 == 0) ? (i / 2) : (i / 2 + 1);
 
-      List<Integer> row = new ArrayList<Integer>(i);
-
-      for (int j = 0; j < middle; j++) {
+      Integer[] row = new Integer[i];
+      for (int j = 0, k = i - 1; j < middle; j++, k--) {
 
         int n = 1;
         if (i > 2 && j > 0) {
-          n = lastRow.get(j - 1) + lastRow.get(j);
+          n = lastRow[j - 1] + lastRow[j];
         }
 
-        row.add(n);
+        row[j] = n;
+        row[k] = n;
       }
 
-      result.add(row);
+      List<Integer> r = Arrays.asList(row);
+      result.add(r);
       lastRow = row;
 
     }
